@@ -1,6 +1,6 @@
 # Five video classification methods
 
-Video classification methods used:
+Video classification methods that can be used:
 
 1. Classify one frame at a time with a ConvNet
 1. Extract features from each frame with a ConvNet, passing the sequence to an RNN, in a separate network
