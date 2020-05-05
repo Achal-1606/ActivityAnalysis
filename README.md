@@ -8,9 +8,13 @@ Video classification methods that can be used:
 1. Extract features from each frame with a ConvNet and pass the sequence to an MLP
 1. Use a 3D convolutional network (has two versions of 3d conv to choose from)
 
+We are currently trying to do the recognition using the Method 2 from the methods mentioned above
+
 ## Requirements
 
-This code requires you have Keras 2 and TensorFlow 1 or greater installed. Please see the `requirements.txt` file. To ensure you're up to date, run:
+This code requires you have Keras 2 and TensorFlow 1 or greater installed. Please see the `requirements.txt` file. 
+
+To ensure you're up to date, run:
 
 `pip install -r requirements.txt`
 
@@ -40,7 +44,7 @@ Before you can run the `lstm` and `mlp`, you need to extract features from the i
 
 The CNN-only method (method #1 in the blog post) is run from `train_cnn.py`.
 
-The rest of the models are run from `train.py`. There are configuration options you can set in that file to choose which model you want to run.
+The rest of the models are run from `train.py`. There are configuration options you can set in that file to choose which model you want to run. If you are trying to run using Tensorflow 2, set `load_to_memory = True` in train.py.
 
 The models are all defined in `models.py`. Reference that file to see which models you are able to run in `train.py`.
 
