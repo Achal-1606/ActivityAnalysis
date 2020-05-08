@@ -89,10 +89,7 @@ def main():
     class_limit = 4
 
     # Chose images or features and image shape based on network.
-    if model in ['conv_3d', 'c3d', 'lrcn']:
-        data_type = 'images'
-        image_shape = (80, 80, 3)
-    elif model in ['lstm', 'mlp']:
+    if model in ['lstm', 'mlp']:
         data_type = 'features'
         image_shape = None
     else:

@@ -71,7 +71,7 @@ def train(data_type, seq_length, model, saved_model=None,
             batch_size=batch_size,
             validation_data=(X_test, y_test),
             verbose=1,
-            callbacks=[tb, early_stopper, csv_logger],
+            callbacks=[tb, early_stopper, csv_logger, checkpointer],
             epochs=nb_epoch)
     else:
         # Use fit generator.
@@ -99,10 +99,7 @@ def main():
     nb_epoch = 1000
 
     # Chose images or features and image shape based on network.
-    if model in ['conv_3d', 'c3d', 'lrcn']:
-        data_type = 'images'
-        image_shape = (80, 80, 3)
-    elif model in ['lstm', 'mlp']:
+    if model in ['lstm', 'mlp']:
         data_type = 'features'
         image_shape = None
     else:
