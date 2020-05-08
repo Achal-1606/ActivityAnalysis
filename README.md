@@ -44,9 +44,7 @@ Before you can run the `lstm` and `mlp`, you need to extract features from the i
 
 ## Training models
 
-The CNN-only method (method #1 above) is run from `train_cnn.py`.
-
-The rest of the models are run from `train.py`. There are configuration options you can set in that file to choose which model you want to run. If you are trying to run using Tensorflow 2, set `load_to_memory = True` in train.py.
+The models are run using `train.py`. There are configuration options you can set in that file to choose which model you want to run. If you are trying to run using Tensorflow 2, set `load_to_memory = True` in train.py.
 
 The models are all defined in `models.py`. Reference that file to see which models you are able to run in `train.py`.
 
