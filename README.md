@@ -1,6 +1,8 @@
-# Five video classification methods
+# Activity Recognition in Video
 
-Video classification methods that can be used:
+There is a detailed presentation in `docs` folder which detailed out in steps our full approaches.
+
+Some ideas related to Activity recognition methods are:
 
 1. Classify one frame at a time with a ConvNet
 1. Extract features from each frame with a ConvNet, passing the sequence to an RNN, in a separate network
@@ -8,7 +10,7 @@ Video classification methods that can be used:
 1. Extract features from each frame with a ConvNet and pass the sequence to an MLP
 1. Use a 3D convolutional network (has two versions of 3d conv to choose from)
 
-We are currently trying to do the recognition using the Method 2 from the methods mentioned above
+We are currently trying to do the recognition using the Method #2 & #4 from the methods mentioned above. However we are still trying to do work on evaluating all of the above mentioned methods.
 
 ## Requirements
 
@@ -42,11 +44,17 @@ Before you can run the `lstm` and `mlp`, you need to extract features from the i
 
 ## Training models
 
-The CNN-only method (method #1 in the blog post) is run from `train_cnn.py`.
+The CNN-only method (method #1 above) is run from `train_cnn.py`.
 
 The rest of the models are run from `train.py`. There are configuration options you can set in that file to choose which model you want to run. If you are trying to run using Tensorflow 2, set `load_to_memory = True` in train.py.
 
 The models are all defined in `models.py`. Reference that file to see which models you are able to run in `train.py`.
 
-Training logs are saved to CSV and also to TensorBoard files. To see progress while training, run `tensorboard --logdir=data/logs` from the project root folder.
+Training logs are saved to CSV and also to TensorBoard files. To see progress while training, run `tensorboard --logdir=data/logs` from the project root folder. The models will get stored in the `data/checkpoints` directory
 
+## To run a sample video
+
+1. `mkdir demo_dir`
+1. `cd demo_dir && mkdir input_vid && mkdir video_frames && mkdir video_features && output_vid`
+1. Place your video for classification in `demo_dir/input_vid`
+1. `python train.py`
